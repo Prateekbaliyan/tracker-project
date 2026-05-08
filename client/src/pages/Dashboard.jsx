@@ -16,6 +16,8 @@ ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 // 🔥 FORCE DARK TEXT
 ChartJS.defaults.color = "#111";
 
+const API_BASE = import.meta.env.VITE_API_URL;
+
 function Dashboard() {
   const [data, setData] = useState(null);
   const [lastAlert, setLastAlert] = useState("");
@@ -43,7 +45,7 @@ function Dashboard() {
   // 🔥 FETCH DATA WITH TOKEN
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/activity/stats", {
+      .get(`${API_BASE}/api/activity/stats`, {
         headers: {
           Authorization: token
         }
