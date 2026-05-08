@@ -1,0 +1,31 @@
+{
+  "name": "ai-productivity-tracker",
+  "version": "1.0.0",
+  "description": "AI Productivity Tracker Desktop Application",
+  "author": "Your Name",
+  "main": "main.js",
+  "dependencies": {
+    "active-win": "^8.2.1",
+    "axios": "^1.15.0"
+  },
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "build": {
+    "appId": "com.aiproductivitytracker.app",
+    "productName": "AI Productivity Tracker",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": false
+    }
+  },
+  "devDependencies": {
+    "electron": "^41.2.0",
+    "electron-builder": "^26.8.1"
+  }
+}
